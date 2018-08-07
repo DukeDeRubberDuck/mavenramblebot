@@ -1,1 +1,1 @@
-worker: sh target/bin/workerBot
+worker: java -jar target/maven-ramblebot-1.0-SNAPSHOT.jar net.dukederubberduck.ramblebot
