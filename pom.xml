@@ -89,7 +89,7 @@
             <assembleDirectory>target</assembleDirectory>
             <programs>
               <program>
-                <mainClass>net.dukederubberduck.ramblebot.Ramblebot</mainClass>
+                <mainClass>Ramblebot</mainClass>
                 <name>workerBot</name>
               </program>
             </programs>
