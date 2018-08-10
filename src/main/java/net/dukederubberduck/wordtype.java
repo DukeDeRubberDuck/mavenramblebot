@@ -1,3 +1,5 @@
+package net.dukederubberduck;
+
 enum wordtype implements Textconstants
 {
     noun1 (NOUN1_TXT, NOUN1_ALLOWED_ENDINGS),

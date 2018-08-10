@@ -1,8 +1,11 @@
-import org.telegram.telegrambots.api.methods.send.SendMessage;
-import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
-import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+package net.dukederubberduck;
+
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import java.util.ArrayList;
 import java.util.List;
+
 
 class ButtonsBuilder
 {
@@ -22,20 +25,6 @@ class ButtonsBuilder
         List<InlineKeyboardButton> buttons4 = new ArrayList<>();
         buttons4.add(new InlineKeyboardButton().setText("Третье существительное").setCallbackData("noun3"));
         buttons.add(buttons4);
-        InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();
-        markupKeyboard.setKeyboard(buttons);
-        sendMessage.setReplyMarkup(markupKeyboard);
-    }
-
-    public synchronized void setFeedbackButtons (SendMessage sendMessage)
-    {
-        List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
-        List<InlineKeyboardButton> buttons1 = new ArrayList<>();
-        buttons1.add(new InlineKeyboardButton().setText("Неплохо! (+1 в топе фраз)").setCallbackData("plusone"));
-        buttons.add(buttons1);
-        List<InlineKeyboardButton> buttons2 = new ArrayList<>();
-        buttons2.add(new InlineKeyboardButton().setText("Давай еще одну").setCallbackData("anotherone"));
-        buttons.add(buttons2);
         InlineKeyboardMarkup markupKeyboard = new InlineKeyboardMarkup();
         markupKeyboard.setKeyboard(buttons);
         sendMessage.setReplyMarkup(markupKeyboard);

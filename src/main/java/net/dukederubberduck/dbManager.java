@@ -1,3 +1,5 @@
+package net.dukederubberduck;
+
 import java.sql.*;
 import java.util.ArrayList;
 

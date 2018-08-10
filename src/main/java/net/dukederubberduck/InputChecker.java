@@ -1,3 +1,5 @@
+package net.dukederubberduck;
+
 import org.languagetool.JLanguageTool;
 import org.languagetool.language.Russian;
 import org.languagetool.rules.RuleMatch;
@@ -24,14 +26,12 @@ dbManager dbm = new dbManager();
 
     private boolean InputLengthCheck (String input)
     {
-        if (input.length() <= 25) return true;
-        else return false;
+        return input.length() <= 25;
     }
 
     private boolean WhiteSpaceCheck (String input)
     {
-        if (input.indexOf(" ") == -1) return true;
-        else return false;
+        return input.indexOf(" ") == -1;
     }
 
     private boolean SimpleSpellCheck (String input)

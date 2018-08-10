@@ -1,3 +1,5 @@
+package net.dukederubberduck;
+
 public interface Textconstants
 {
     // Ниже тексты типовых ответов бота
@@ -17,7 +19,7 @@ public interface Textconstants
     String USER = "ddrd";
     String PASS = "mydyingbride";
 
-    //  Ниже константы enum wordtype. Допустимые окончания должны быть одинаковой (внутри массива) длинны.
+    //  Ниже константы enum net.dukederubberduck.wordtype. Допустимые окончания должны быть одинаковой (внутри массива) длинны.
     String [] NOUN1_ALLOWED_ENDINGS = {"а", "я", "и", "ы"};
     String [] NOUN2_ALLOWED_ENDINGS = {"ы"};
     String [] VERB_ALLOWED_ENDINGS = {"т"};
