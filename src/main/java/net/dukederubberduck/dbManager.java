@@ -23,7 +23,7 @@ class dbManager implements Textconstants
             //Class.forName(JDBC_DRIVER);
             conn = getConnection();
             stmt = conn.createStatement();
-            String sql = "INSERT INTO " + wt + " VALUES ('" + input + "')";
+            String sql = "INSERT INTO words." + wt + " VALUES ('" + input + "')";
             stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
@@ -62,7 +62,7 @@ class dbManager implements Textconstants
 
             for (wordtype wt : wordtype.values())
             {
-                String sql = "SELECT input FROM " + wt;
+                String sql = "SELECT input FROM words." + wt;
                 ResultSet rs = stmt.executeQuery(sql);
 
                 while (rs.next())
@@ -108,7 +108,7 @@ class dbManager implements Textconstants
             //Class.forName(JDBC_DRIVER);
             conn = getConnection();
             stmt = conn.createStatement();
-            String sql = "SELECT input FROM " + wt;
+            String sql = "SELECT input FROM words." + wt;
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next())
             {
