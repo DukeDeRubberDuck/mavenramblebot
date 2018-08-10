@@ -14,17 +14,17 @@ public interface Textconstants
     String WHY_TXT = "Этот бот — учебный проект. Строит типовую фразу из пользовательского ввода. Функционал ограничен, но возможно будет расширен в дальнейшем. Написан на Джаве.";
 
     // Ниже упрощение связи с базой данных
-    String JDBC_DRIVER = "org.h2.Driver";
-    String DB_URL = "jdbc:h2:~/test";
-    String USER = "ddrd";
-    String PASS = "mydyingbride";
+    //String JDBC_DRIVER = "org.h2.Driver";
+    String DB_URL = "postgresql-angular-72908";
+    //String USER = "ddrd";
+    //String PASS = "mydyingbride";
 
     //  Ниже константы enum net.dukederubberduck.wordtype. Допустимые окончания должны быть одинаковой (внутри массива) длинны.
     String [] NOUN1_ALLOWED_ENDINGS = {"а", "я", "и", "ы"};
     String [] NOUN2_ALLOWED_ENDINGS = {"ы"};
     String [] VERB_ALLOWED_ENDINGS = {"т"};
     String [] ADJ_ALLOWED_ENDINGS = {"ую", "юю"};
-    String [] NOUN3_ALLOWED_ENDINGS = {"у", "ю"};
+    String [] NOUN3_ALLOWED_ENDINGS = {"у", "ю", "ь"};
     String NOUN1_TXT = "Введите первое существительное фразы. Множественное число, именительный падеж, описывающий существ (пример: лоси):";
     String NOUN2_TXT = "Введите второе существительное фразы. Множественное число, именительный падеж, описывающий качества существ (пример: авантюристы):";
     String VERB_TXT = "Введите глагол. Обязательно отвечающий на вопрос «что делают?» (пример: пьют):";

@@ -1,5 +1,7 @@
 package net.dukederubberduck;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -18,8 +20,8 @@ class dbManager implements Textconstants
     {
         try
         {
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            //Class.forName(JDBC_DRIVER);
+            conn = getConnection();
             stmt = conn.createStatement();
             String sql = "INSERT INTO " + wt + " VALUES ('" + input + "')";
             stmt.executeUpdate(sql);
@@ -54,8 +56,8 @@ class dbManager implements Textconstants
 
         try
         {
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            //Class.forName(JDBC_DRIVER);
+            conn = getConnection();
             stmt = conn.createStatement();
 
             for (wordtype wt : wordtype.values())
@@ -103,8 +105,8 @@ class dbManager implements Textconstants
 
         try
         {
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            //Class.forName(JDBC_DRIVER);
+            conn = getConnection();
             stmt = conn.createStatement();
             String sql = "SELECT input FROM " + wt;
             ResultSet rs = stmt.executeQuery(sql);
@@ -151,5 +153,15 @@ class dbManager implements Textconstants
                 " " + ALverb.get(r3) +
                 " " + ALadj.get(r4) +
                 " " + ALnoun3.get(r5);
+    }
+
+    private static Connection getConnection() throws URISyntaxException, SQLException {
+        URI dbUri = new URI(System.getenv(DB_URL));
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
+
+        return DriverManager.getConnection(dbUrl, username, password);
     }
 }
