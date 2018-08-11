@@ -155,13 +155,12 @@ class dbManager implements Textconstants
                 " " + ALnoun3.get(r5);
     }
 
-    private static Connection getConnection() throws URISyntaxException, SQLException {
-        URI dbUri = new URI(System.getenv(DB_URL));
+    private static Connection getConnection() throws SQLException {
+        //URI dbUri = new URI(System.getenv(DB_URL));
+        //String username = dbUri.getUserInfo().split(":")[0];
+        //String password = dbUri.getUserInfo().split(":")[1];
+        //String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
 
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
-
-        return DriverManager.getConnection(dbUrl, username, password);
+        return DriverManager.getConnection(DB_URL, USER, PASS);
     }
 }

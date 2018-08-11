@@ -13,6 +13,7 @@ public class Ramblebot extends TelegramLongPollingBot implements Textconstants
 {
     wordtype wt = null;
 
+
     ButtonsBuilder bb = new ButtonsBuilder();
     InputChecker ic = new InputChecker();
     dbManager dbm = new dbManager();
