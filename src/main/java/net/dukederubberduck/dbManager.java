@@ -136,7 +136,7 @@ class dbManager implements Textconstants
         return answer;
     }
 
-    public String gtttttrrrr ()
+    public String dbGetRandomPhrase ()
     {
         dbCheck();
 
@@ -153,7 +153,7 @@ class dbManager implements Textconstants
                 " " + ALnoun3.get(r5);
     }
 
-    public String dbGetRandomPhrase ()
+    public String grbnew ()
     {
         String noun1 = "";
         String noun2 = "";
