@@ -6,7 +6,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import java.util.ArrayList;
 import java.util.List;
 
-
 class ButtonsBuilder
 {
     public synchronized void setInlineButtons (SendMessage sendMessage)

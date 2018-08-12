@@ -14,8 +14,7 @@ public interface Textconstants
     String WHY_TXT = "Этот бот — учебный проект. Строит типовую фразу из пользовательского ввода. Функционал ограничен, но возможно будет расширен в дальнейшем. Написан на Джаве.";
 
     // Ниже упрощение связи с базой данных
-    //String JDBC_DRIVER = "org.h2.Driver";
-    //String DB_URL = "postgresql-angular-72908";
+    //"postgresql-angular-72908";
     String DB_URL = "jdbc:postgresql://ec2-54-217-214-201.eu-west-1.compute.amazonaws.com:5432/ddmsugnlpolh1k?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
     String USER = "sfeutjfxiqktiw";
     String PASS = "656ff93e41a1fea6d4d0adaeed653f675f0fd17b8a94cb6facb8ddf5cc39d14f";

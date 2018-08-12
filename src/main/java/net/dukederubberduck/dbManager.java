@@ -1,7 +1,5 @@
 package net.dukederubberduck;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -138,7 +136,7 @@ class dbManager implements Textconstants
         return answer;
     }
 
-    public String dbGetRandomPhrase ()
+    public String gtttttrrrr ()
     {
         dbCheck();
 
@@ -154,6 +152,60 @@ class dbManager implements Textconstants
                 " " + ALadj.get(r4) +
                 " " + ALnoun3.get(r5);
     }
+
+    public String dbGetRandomPhrase ()
+    {
+        String noun1 = "";
+        String noun2 = "";
+        String verb = "";
+        String adj = "";
+        String noun3 = "";
+
+        try
+        {
+            conn = getConnection();
+
+            for (wordtype wt : wordtype.values())
+            {
+                stmt = conn.createStatement();
+                String sql = "SELECT input FROM words." + wt + " ORDER BY RANDOM() LIMIT 1";
+                ResultSet rs = stmt.executeQuery(sql);
+                String s = rs.getString("input");
+
+                while (rs.next())
+                {
+                    switch (wt)
+                    {
+                        case noun1: noun1 = s; break;
+                        case noun2: noun2 = s; break;
+                        case verb: verb = s; break;
+                        case adj: adj = s; break;
+                        case noun3: noun3 = s; break;
+                    }
+                }
+            }
+            conn.close();
+        }
+        catch (SQLException se) {se.printStackTrace();}
+        catch (Exception e) {e.printStackTrace();}
+        finally
+        {
+            try
+            {
+                if (stmt != null) stmt.close();
+            }
+            catch (SQLException se2){ }
+
+            try
+            {
+                if (conn != null) conn.close();
+            }
+            catch (SQLException se) {se.printStackTrace();}
+        }
+
+        return noun1.substring(0,1).toUpperCase() +  noun1.substring(1).toLowerCase() + "-" + noun2 + " " + verb + " " + adj + " " + noun3;
+    }
+
 
     private static Connection getConnection() throws SQLException {
         //URI dbUri = new URI(System.getenv(DB_URL));
